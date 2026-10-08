@@ -31,6 +31,9 @@ public class InstructorService {
     }
 
     public List<Instructor> buscarPorProfile(Long profileId) {
+        if (profileId == null){
+            throw new IllegalArgumentException("ID do perfil é obrigatório.");
+        }
         return instructorRepository.findByProfileId(profileId);
     }
 
