@@ -31,6 +31,10 @@ public class Estudante {
     )
     private Set<Curso> cursos = new HashSet<>();
 
+    // O JPA usa este construtor para carregar estudantes do banco.
+    public Estudante() {
+    }
+
     public Estudante(String nome, String email) {
         this.nome = nome;
         this.email = email;

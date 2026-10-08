@@ -20,13 +20,11 @@ public class AcaoSocioambiental {
     private int capacidadeMax;
     private int pontuacao;
 
-    // Muitos-para-Um: AcaoSocioambiental -> Categoria
     @ManyToOne
     @JoinColumn(name = "categoria_id")
     @JsonIgnoreProperties("acoes")
     private Categoria categoria;
 
-    // Muitos-para-Muitos: AcaoSocioambiental <-> Voluntario
     @ManyToMany(mappedBy = "acoes")
     @JsonIgnoreProperties({"acoes", "documento"})
     private Set<Voluntario> voluntarios = new HashSet<>();
